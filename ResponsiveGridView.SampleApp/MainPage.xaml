@@ -31,7 +31,6 @@
            
             <PivotItem Header="Square Style">
                 <ext:ResponsiveGridView 
-                    x:Name="list2"
                     ColumnsInMobile="2"
                     ColumnsInTablet="4"
                     ColumnsInDesktop="6"
@@ -82,7 +81,7 @@
                     ColumnsInHub="4"
                     ItemWidth="400"
                     ItemHeight="100"
-                    ItemStyle="Custom"
+                    ItemStyle="Relative"
                     ItemSpace="0 0 5 5"
                     Style="{StaticResource BaseResponsiveGridViewStyle}"
                     ItemTemplate="{StaticResource ItemTemplate}"

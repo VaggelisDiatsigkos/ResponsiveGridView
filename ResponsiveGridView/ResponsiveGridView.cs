@@ -256,7 +256,7 @@ namespace ResponsiveGridView
         /// The item style property
         /// </summary>
         public static readonly DependencyProperty ItemStyleProperty = DependencyProperty.Register(
-            "ItemStyle", typeof(ItemStyleEnum), typeof(ResponsiveGridView), new PropertyMetadata(ItemStyleEnum.Custom));
+            "ItemStyle", typeof(ItemStyleEnum), typeof(ResponsiveGridView), new PropertyMetadata(ItemStyleEnum.Relative));
 
         /// <summary>
         /// The item horizontal alignment property
@@ -459,7 +459,7 @@ namespace ResponsiveGridView
             CurrentItemWidth = (width / columns) - (ItemSpace.Left + ItemSpace.Right + 1);
             switch (ItemStyle)
             {
-                case ItemStyleEnum.Custom:
+                case ItemStyleEnum.Relative:
                     CurrentItemHeight = CurrentItemWidth * ItemHeight / ItemWidth;
                     break;
                 case ItemStyleEnum.Square:
@@ -531,7 +531,7 @@ namespace ResponsiveGridView
         /// </summary>
         public enum ItemStyleEnum
         {
-            Custom, Square, Portrait, Landscape
+            Relative, Square, Portrait, Landscape
         }
 
         /// <summary>
