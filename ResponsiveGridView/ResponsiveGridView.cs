@@ -34,13 +34,10 @@ namespace ResponsiveGridView
         #region Fields
 
         /// <summary>
-        /// The scroll viewer
-        /// </summary>
-        private ScrollViewer _scrollViewer;
-        /// <summary>
         /// The current item width
         /// </summary>
         private double _currentItemWidth;
+
         /// <summary>
         /// The current item height
         /// </summary>
@@ -229,7 +226,6 @@ namespace ResponsiveGridView
 
         #region Dependency Properties
 
-
         /// <summary>
         /// The item width property
         /// </summary>
@@ -324,7 +320,6 @@ namespace ResponsiveGridView
         public ResponsiveGridView()
         {
             Loaded += OnLoaded;
-            Unloaded += OnUnloaded;
             SizeChanged += OnSizeChanged;
         }
 
@@ -400,28 +395,10 @@ namespace ResponsiveGridView
         /// <param name="routedEventArgs">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
-            _scrollViewer = this.GetFirstDescendantOfType<ScrollViewer>();
-            if (_scrollViewer != null)
+            var scrollViewer = this.GetFirstDescendantOfType<ScrollViewer>();
+            if (scrollViewer != null)
             {
-                _scrollViewer.ViewChanged += ScrollViewerOnViewChanged;
-            }
-        }
-
-        /// <summary>
-        /// Handles the <see cref="E:Unloaded" /> event.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="routedEventArgs">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void OnUnloaded(object sender, RoutedEventArgs routedEventArgs)
-        {
-            Loaded -= OnLoaded;
-            Unloaded -= OnUnloaded;
-            SizeChanged -= OnSizeChanged;
-
-            if (_scrollViewer != null)
-            {
-                _scrollViewer.ViewChanged -= ScrollViewerOnViewChanged;
-                _scrollViewer = null;
+                scrollViewer.ViewChanged += ScrollViewerOnViewChanged;
             }
         }
 
@@ -432,7 +409,8 @@ namespace ResponsiveGridView
         /// <param name="e">The <see cref="ScrollViewerViewChangedEventArgs"/> instance containing the event data.</param>
         private void ScrollViewerOnViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
         {
-            if (_scrollViewer.VerticalOffset < _scrollViewer.ScrollableHeight)
+            var scrollViewer = (ScrollViewer) sender;
+            if (scrollViewer.VerticalOffset < scrollViewer.ScrollableHeight)
             {
                 HasScrollReachedToEnd = false;
                 return;
