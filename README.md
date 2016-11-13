@@ -23,6 +23,7 @@ Extended functionality of **GridView** Control for Universal Windows Platform.
    MaxTabletWidth="1007"
    MaxDesktopWidth="1920"
    ItemSpace="0 0 5 5"
+   IsIncrementalLoadingEnabled="True"
    ItemBackground="LightGray"
    ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
 ```
@@ -42,6 +43,7 @@ Or if you want to have a shared style:
    ColumnsInHub="8"
    ItemStyle="Square"
    ItemSpace="0 0 5 5"
+   IsIncrementalLoadingEnabled="True"
    Style="{StaticResource BaseResponsiveGridViewStyle}"
    ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
 ```
