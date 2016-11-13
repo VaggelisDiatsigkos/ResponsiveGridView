@@ -10,7 +10,7 @@ Extended functionality of **GridView** Control for Universal Windows Platform.
 
 ##Examples:
 ```xaml
-<controls:ResponsiveGridView 
+<ext:ResponsiveGridView 
    ItemStyle="Relative"
    ItemWidth="450"
    ItemHeight="320"
@@ -34,7 +34,7 @@ Or if you want to have a shared style:
    <Setter Property="ItemBackground" Value="LightGray"/>
 </Style>
 
-<controls:ResponsiveGridView 
+<ext:ResponsiveGridView 
    ColumnsInMobile="2"
    ColumnsInTablet="4"
    ColumnsInDesktop="6"
