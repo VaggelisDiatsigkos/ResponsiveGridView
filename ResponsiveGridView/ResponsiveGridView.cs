@@ -63,7 +63,7 @@ namespace ResponsiveGridView
         /// Gets or sets a value indicating whether [scrolled to end].
         /// </summary>
         /// <value><c>true</c> if [scrolled to end]; otherwise, <c>false</c>.</value>
-        public bool ScrolledToEnd { get; set; }
+        public bool HasScrollReachedToEnd { get; set; }
 
         /// <summary>
         /// Gets or sets the width of the current item.
@@ -434,10 +434,10 @@ namespace ResponsiveGridView
         {
             if (_scrollViewer.VerticalOffset < _scrollViewer.ScrollableHeight)
             {
-                ScrolledToEnd = false;
+                HasScrollReachedToEnd = false;
                 return;
             }
-            ScrolledToEnd = true;
+            HasScrollReachedToEnd = true;
             ScrollReachedToEnd?.Invoke(sender, e);
         }
 

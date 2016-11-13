@@ -17,20 +17,20 @@ namespace ResponsiveGridView.SampleApp
             this.InitializeComponent();
         }
 
-        private void List_OnLoaded(object sender, RoutedEventArgs e)
+        private void ListOnLoaded(object sender, RoutedEventArgs e)
         {
             var responsiveGridView = (ResponsiveGridView)sender;
-            FillListWithItems(responsiveGridView, 50);
+            SetItems(responsiveGridView, 50);
         }
 
         private void ListOnScrollReachedToEnd(object sender, ScrollViewerViewChangedEventArgs e)
         {
             var scrollViewer = (ScrollViewer) sender;
             var responsiveGridView = scrollViewer.GetFirstAncestorOfType<ResponsiveGridView>();
-            FillListWithItems(responsiveGridView, 50);
+            SetItems(responsiveGridView, 50);
         }
 
-        private void FillListWithItems(ResponsiveGridView list, int length)
+        private void SetItems(ResponsiveGridView list, int itemsCount)
         {
             if (list.ItemsSource == null)
             {
@@ -38,7 +38,7 @@ namespace ResponsiveGridView.SampleApp
             }
 
             var collection = (ObservableCollection<int>)list.ItemsSource;
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < itemsCount; i++)
             {
                 collection.Add(collection.Count + 1);
             }

@@ -41,7 +41,7 @@
                     ItemSpace="0 0 5 5"
                     Style="{StaticResource BaseResponsiveGridViewStyle}"
                     ItemTemplate="{StaticResource ItemTemplate}"
-                    Loaded="List_OnLoaded"
+                    Loaded="ListOnLoaded"
                     ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
             </PivotItem>
             
@@ -55,7 +55,7 @@
                     ItemSpace="0 0 5 5"
                     Style="{StaticResource BaseResponsiveGridViewStyle}"
                     ItemTemplate="{StaticResource ItemTemplate}"
-                    Loaded="List_OnLoaded"
+                    Loaded="ListOnLoaded"
                     ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
             </PivotItem>
             
@@ -69,11 +69,11 @@
                     ItemSpace="0 0 5 5"
                     Style="{StaticResource BaseResponsiveGridViewStyle}"
                     ItemTemplate="{StaticResource ItemTemplate}"
-                    Loaded="List_OnLoaded"
+                    Loaded="ListOnLoaded"
                     ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
             </PivotItem>
 
-            <PivotItem Header="Custom Style">
+            <PivotItem Header="Relative Style">
                 <ext:ResponsiveGridView 
                     ColumnsInMobile="1"
                     ColumnsInTablet="2"
@@ -85,7 +85,7 @@
                     ItemSpace="0 0 5 5"
                     Style="{StaticResource BaseResponsiveGridViewStyle}"
                     ItemTemplate="{StaticResource ItemTemplate}"
-                    Loaded="List_OnLoaded"
+                    Loaded="ListOnLoaded"
                     ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
             </PivotItem>
 
