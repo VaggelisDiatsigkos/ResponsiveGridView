@@ -7,7 +7,7 @@ Extended functionality of **GridView** Control for Universal Windows Platform.
 * Set your own screen breakpoints (MaxMobileWidth, MaxTabletWidth, MaxDesktopWidth).
 * Set desired ItemWidth and ItemHeight, along with ItemStyle="Relative", and auto-adjust the item template based on the screen size.
 * Force the item template with a default style (ItemStyle="Square|Portrait|Landscape").
-* Event that detects when scrollbar reaches the end.
+* ScrollReachedToEnd Event that detects when scrollbar reaches the end (enable/disable subscription to the event by setting IsIncrementalLoadingEnabled to true/false).
 
 ##Examples:
 ```xaml
@@ -23,6 +23,7 @@ Extended functionality of **GridView** Control for Universal Windows Platform.
    MaxTabletWidth="1007"
    MaxDesktopWidth="1920"
    ItemSpace="0 0 5 5"
+   IsIncrementalLoadingEnabled="True"
    ItemBackground="LightGray"
    ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
 ```
@@ -42,6 +43,7 @@ Or if you want to have a shared style:
    ColumnsInHub="8"
    ItemStyle="Square"
    ItemSpace="0 0 5 5"
+   IsIncrementalLoadingEnabled="True"
    Style="{StaticResource BaseResponsiveGridViewStyle}"
    ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
 ```
@@ -62,6 +64,7 @@ Or if you want to have a shared style:
 * **MaxMobileWidth**: double (640)
 * **MaxTabletWidth**: double (1007)
 * **MaxDesktopWidth**: double (1920)
+* **IsIncrementalLoadingEnabled**: bool (false)
 
 ###Properties
 * **HasScrollReachedToEnd**: bool
