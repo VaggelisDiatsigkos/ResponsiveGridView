@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
 using ResponsiveGridView.Annotations;
+using ResponsiveGridView.Enums;
 using ResponsiveGridView.Extentions;
 
 namespace ResponsiveGridView
@@ -551,32 +552,6 @@ namespace ResponsiveGridView
                 default:
                     throw new ArgumentOutOfRangeException(nameof(deviceType));
             }
-        }
-
-        #endregion
-
-        #region Enumerations
-
-        /// <summary>
-        /// Enum ItemStyleEnum
-        /// </summary>
-        public enum ItemStyleEnum
-        {
-            /// <summary>
-            /// The relative
-            /// </summary>
-            Relative, Square, Portrait, Landscape
-        }
-
-        /// <summary>
-        /// Enum DeviceTypeEnum
-        /// </summary>
-        public enum DeviceTypeEnum
-        {
-            /// <summary>
-            /// The mobile
-            /// </summary>
-            Mobile, Tablet, Desktop, Hub
         }
 
         #endregion

@@ -107,6 +107,8 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\DeviceTypeEnum.cs" />
+    <Compile Include="Enums\ItemStyleEnum.cs" />
     <Compile Include="Extentions\VisualTreeHelperExtensions.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
