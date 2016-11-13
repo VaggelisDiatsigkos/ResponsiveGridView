@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponsiveGridView", "ResponsiveGridView\ResponsiveGridView.csproj", "{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponsiveGridView.SampleApp", "ResponsiveGridView.SampleApp\ResponsiveGridView.SampleApp.csproj", "{F4385A18-F00E-41CC-891B-58AFA22EB1F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Debug|ARM.ActiveCfg = Debug|ARM
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Debug|ARM.Build.0 = Debug|ARM
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Debug|x64.ActiveCfg = Debug|x64
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Debug|x64.Build.0 = Debug|x64
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Debug|x86.ActiveCfg = Debug|x86
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Debug|x86.Build.0 = Debug|x86
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Release|ARM.ActiveCfg = Release|ARM
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Release|ARM.Build.0 = Release|ARM
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Release|x64.ActiveCfg = Release|x64
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Release|x64.Build.0 = Release|x64
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Release|x86.ActiveCfg = Release|x86
+		{4C3C03D1-E3B7-4E0E-8B8F-47D97FAF6F43}.Release|x86.Build.0 = Release|x86
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|Any CPU.Build.0 = Debug|x86
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|Any CPU.Deploy.0 = Debug|x86
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|ARM.Build.0 = Debug|ARM
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|ARM.Deploy.0 = Debug|ARM
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|x64.ActiveCfg = Debug|x64
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|x64.Build.0 = Debug|x64
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|x64.Deploy.0 = Debug|x64
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|x86.ActiveCfg = Debug|x86
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|x86.Build.0 = Debug|x86
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Debug|x86.Deploy.0 = Debug|x86
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Release|Any CPU.ActiveCfg = Release|x86
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Release|ARM.ActiveCfg = Release|ARM
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Release|ARM.Build.0 = Release|ARM
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Release|ARM.Deploy.0 = Release|ARM
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Release|x64.ActiveCfg = Release|x64
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Release|x64.Build.0 = Release|x64
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Release|x64.Deploy.0 = Release|x64
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Release|x86.ActiveCfg = Release|x86
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Release|x86.Build.0 = Release|x86
+		{F4385A18-F00E-41CC-891B-58AFA22EB1F7}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
