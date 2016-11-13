@@ -64,7 +64,7 @@ Or if you want to have a shared style:
 * **MaxDesktopWidth**: double (1920)
 
 ###Properties
-* **ScrolledToEnd**: bool
+* **HasScrollReachedToEnd**: bool
 * **CurrentItemWidth**: double
 * **CurrentItemHeight**: double
 
