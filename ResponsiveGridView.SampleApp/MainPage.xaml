@@ -42,7 +42,7 @@
                     Style="{StaticResource BaseResponsiveGridViewStyle}"
                     ItemTemplate="{StaticResource ItemTemplate}"
                     Loaded="List_OnLoaded"
-                    ScrollEnded="List_OnScrollEnded"/>
+                    ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
             </PivotItem>
             
             <PivotItem Header="Portrait Style">
@@ -56,7 +56,7 @@
                     Style="{StaticResource BaseResponsiveGridViewStyle}"
                     ItemTemplate="{StaticResource ItemTemplate}"
                     Loaded="List_OnLoaded"
-                    ScrollEnded="List_OnScrollEnded"/>
+                    ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
             </PivotItem>
             
             <PivotItem Header="Landscape Style">
@@ -70,7 +70,7 @@
                     Style="{StaticResource BaseResponsiveGridViewStyle}"
                     ItemTemplate="{StaticResource ItemTemplate}"
                     Loaded="List_OnLoaded"
-                    ScrollEnded="List_OnScrollEnded"/>
+                    ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
             </PivotItem>
 
             <PivotItem Header="Custom Style">
@@ -86,7 +86,7 @@
                     Style="{StaticResource BaseResponsiveGridViewStyle}"
                     ItemTemplate="{StaticResource ItemTemplate}"
                     Loaded="List_OnLoaded"
-                    ScrollEnded="List_OnScrollEnded"/>
+                    ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
             </PivotItem>
 
         </Pivot>

@@ -9,15 +9,11 @@
 // <copyright file="ResponsiveGridView.cs">
 //     Copyright ©  2016
 // </copyright>
-// <summary>Extension of GridView Control for Universal Windows Platform</summary>
+// <summary>Extended functionality of GridView Control for Universal Windows Platform</summary>
 // ***********************************************************************
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -55,9 +51,9 @@ namespace ResponsiveGridView
         #region Events
 
         /// <summary>
-        /// ScrollEnded EventHandler
+        /// ScrollReachedToEnd EventHandler
         /// </summary>
-        public event EventHandler<ScrollViewerViewChangedEventArgs> ScrollEnded;
+        public event EventHandler<ScrollViewerViewChangedEventArgs> ScrollReachedToEnd;
 
         #endregion
 
@@ -442,7 +438,7 @@ namespace ResponsiveGridView
                 return;
             }
             ScrolledToEnd = true;
-            ScrollEnded?.Invoke(sender, e);
+            ScrollReachedToEnd?.Invoke(sender, e);
         }
 
         /// <summary>
