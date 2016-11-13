@@ -43,7 +43,7 @@ Or if you want to have a shared style:
    ItemStyle="Square"
    ItemSpace="0 0 5 5"
    Style="{StaticResource BaseResponsiveGridViewStyle}"
-   ScrollEnded="List_OnScrollEnded"/>
+   ScrollEnded="ListOnScrollEnded"/>
 ```
 
 ##Class Wiki:
