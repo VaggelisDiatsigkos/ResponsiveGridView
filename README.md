@@ -7,7 +7,7 @@ Extended functionality of **GridView** Control for Universal Windows Platform.
 * Set your own screen breakpoints (MaxMobileWidth, MaxTabletWidth, MaxDesktopWidth).
 * Set desired ItemWidth and ItemHeight, along with ItemStyle="Relative", and auto-adjust the item template based on the screen size.
 * Force the item template with a default style (ItemStyle="Square|Portrait|Landscape").
-* ScrollReachedToEnd Event that detects when scrollbar reaches the end (enable this by setting IsIncrementalLoadingEnabled to true).
+* ScrollReachedToEnd Event that detects when scrollbar reaches the end (enable/disable subscription to the event by setting IsIncrementalLoadingEnabled to true/false).
 
 ##Examples:
 ```xaml
