@@ -34,6 +34,11 @@ namespace ResponsiveGridView
         #region Fields
 
         /// <summary>
+        /// The scroll viewer
+        /// </summary>
+        private ScrollViewer _scrollViewer;
+
+        /// <summary>
         /// The current item width
         /// </summary>
         private double _currentItemWidth;
@@ -220,7 +225,21 @@ namespace ResponsiveGridView
         {
             get { return (double)GetValue(MaxDesktopWidthProperty); }
             set { SetValue(MaxDesktopWidthProperty, value); }
-        } 
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is incremental loading enabled.
+        /// </summary>
+        /// <value><c>true</c> if this instance is incremental loading enabled; otherwise, <c>false</c>.</value>
+        public bool IsIncrementalLoadingEnabled
+        {
+            get { return (bool)GetValue(IsIncrementalLoadingEnabledProperty); }
+            set
+            {
+                SetValue(IsIncrementalLoadingEnabledProperty, value);
+                UpdateScrollViewerOnViewChangedRegistration();
+            }
+        }
 
         #endregion
 
@@ -310,16 +329,23 @@ namespace ResponsiveGridView
         public static readonly DependencyProperty MaxDesktopWidthProperty = DependencyProperty.Register(
             "MaxDesktopWidth", typeof(double), typeof(ResponsiveGridView), new PropertyMetadata(1920.0));
 
+        /// <summary>
+        /// The is incremental loading enabled property
+        /// </summary>
+        public static readonly DependencyProperty IsIncrementalLoadingEnabledProperty = DependencyProperty.Register(
+            "IsIncrementalLoadingEnabled", typeof(bool), typeof(ResponsiveGridView), new PropertyMetadata(default(bool)));
+
         #endregion
 
         #region .ctor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResponsiveGridView"/> class.
+        /// Initializes a new instance of the <see cref="ResponsiveGridView" /> class.
         /// </summary>
         public ResponsiveGridView()
         {
             Loaded += OnLoaded;
+            Unloaded += OnUnloaded;
             SizeChanged += OnSizeChanged;
         }
 
@@ -392,13 +418,43 @@ namespace ResponsiveGridView
         /// Handles the <see cref="E:Loaded" /> event.
         /// </summary>
         /// <param name="sender">The sender.</param>
-        /// <param name="routedEventArgs">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        /// <param name="routedEventArgs">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
-            var scrollViewer = this.GetFirstDescendantOfType<ScrollViewer>();
-            if (scrollViewer != null)
+            _scrollViewer = this.GetFirstDescendantOfType<ScrollViewer>();
+        }
+
+        /// <summary>
+        /// Handles the <see cref="E:Unloaded" /> event.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="routedEventArgs">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void OnUnloaded(object sender, RoutedEventArgs routedEventArgs)
+        {
+            if (_scrollViewer != null)
             {
-                scrollViewer.ViewChanged += ScrollViewerOnViewChanged;
+                _scrollViewer.ViewChanged -= ScrollViewerOnViewChanged;
+                _scrollViewer = null;
+            }
+        }
+
+        /// <summary>
+        /// Updates the scroll viewer on view changed registration.
+        /// </summary>
+        private void UpdateScrollViewerOnViewChangedRegistration()
+        {
+            if (_scrollViewer == null)
+            {
+                return;
+            }
+
+            if (IsIncrementalLoadingEnabled)
+            {
+                _scrollViewer.ViewChanged += ScrollViewerOnViewChanged;
+            }
+            else
+            {
+                _scrollViewer.ViewChanged -= ScrollViewerOnViewChanged;
             }
         }
 
@@ -406,11 +462,10 @@ namespace ResponsiveGridView
         /// ScrollViewer on view changed.
         /// </summary>
         /// <param name="sender">The sender.</param>
-        /// <param name="e">The <see cref="ScrollViewerViewChangedEventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="ScrollViewerViewChangedEventArgs" /> instance containing the event data.</param>
         private void ScrollViewerOnViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
         {
-            var scrollViewer = (ScrollViewer) sender;
-            if (scrollViewer.VerticalOffset < scrollViewer.ScrollableHeight)
+            if (_scrollViewer.VerticalOffset < _scrollViewer.ScrollableHeight)
             {
                 HasScrollReachedToEnd = false;
                 return;
@@ -423,7 +478,7 @@ namespace ResponsiveGridView
         /// Handles the <see cref="E:SizeChanged" /> event.
         /// </summary>
         /// <param name="sender">The sender.</param>
-        /// <param name="e">The <see cref="SizeChangedEventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="SizeChangedEventArgs" /> instance containing the event data.</param>
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
         {
             var width = e.NewSize.Width;
@@ -478,6 +533,7 @@ namespace ResponsiveGridView
         /// </summary>
         /// <param name="deviceType">Type of the device.</param>
         /// <returns>System.Int32.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">deviceType</exception>
         /// <exception cref="ArgumentOutOfRangeException">deviceType</exception>
         private int GetColumnsByDeviceType(DeviceTypeEnum deviceType)
         {
@@ -505,6 +561,9 @@ namespace ResponsiveGridView
         /// </summary>
         public enum ItemStyleEnum
         {
+            /// <summary>
+            /// The relative
+            /// </summary>
             Relative, Square, Portrait, Landscape
         }
 
@@ -513,6 +572,9 @@ namespace ResponsiveGridView
         /// </summary>
         public enum DeviceTypeEnum
         {
+            /// <summary>
+            /// The mobile
+            /// </summary>
             Mobile, Tablet, Desktop, Hub
         }
 
@@ -521,7 +583,7 @@ namespace ResponsiveGridView
         #region Notify Property Changed
 
         /// <summary>
-        /// PropertyChanged event 
+        /// PropertyChanged event
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
