@@ -24,7 +24,7 @@ Extended functionality of **GridView** Control for Universal Windows Platform.
    MaxDesktopWidth="1920"
    ItemSpace="0 0 5 5"
    ItemBackground="LightGray"
-   ScrollEnded="List_OnScrollEnded"/>
+   ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
 ```
 Or if you want to have a shared style:
 ```xaml
@@ -43,7 +43,7 @@ Or if you want to have a shared style:
    ItemStyle="Square"
    ItemSpace="0 0 5 5"
    Style="{StaticResource BaseResponsiveGridViewStyle}"
-   ScrollEnded="List_OnScrollEnded"/>
+   ScrollReachedToEnd="ListOnScrollReachedToEnd"/>
 ```
 
 ##Class Wiki:
@@ -64,7 +64,7 @@ Or if you want to have a shared style:
 * **MaxDesktopWidth**: double (1920)
 
 ###Properties
-* **ScrolledToEnd**: bool
+* **HasScrollReachedToEnd**: bool
 * **CurrentItemWidth**: double
 * **CurrentItemHeight**: double
 
