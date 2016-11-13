@@ -422,6 +422,7 @@ namespace ResponsiveGridView
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
             _scrollViewer = this.GetFirstDescendantOfType<ScrollViewer>();
+            UpdateScrollViewerOnViewChangedRegistration();
         }
 
         /// <summary>
