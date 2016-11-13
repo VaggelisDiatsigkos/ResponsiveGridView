@@ -1,5 +1,5 @@
 # ResponsiveGridView
-Extended functionality of GridView Control for Universal Windows Platform.
+Extended functionality of **GridView** Control for Universal Windows Platform.
 
 ##Main Features:
 
