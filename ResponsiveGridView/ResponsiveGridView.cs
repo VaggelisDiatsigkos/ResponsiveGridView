@@ -484,7 +484,7 @@ namespace ResponsiveGridView
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
         {
             var width = e.NewSize.Width;
-            var deviceType = GetDeviceTypeByControlWidth(width);
+            var deviceType = GetDeviceTypeByWindowWidth();
             var columns = GetColumnsByDeviceType(deviceType);
 
             CurrentItemWidth = (width / columns) - (ItemSpace.Left + ItemSpace.Right + 1);
@@ -510,8 +510,9 @@ namespace ResponsiveGridView
         /// </summary>
         /// <param name="width">Control width.</param>
         /// <returns>DeviceTypeEnum.</returns>
-        private DeviceTypeEnum GetDeviceTypeByControlWidth(double width)
+        private DeviceTypeEnum GetDeviceTypeByWindowWidth()
         {
+            var width = Window.Current.Bounds.Width;
             if (width > MaxDesktopWidth)
             {
                 return DeviceTypeEnum.Hub;
